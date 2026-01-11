@@ -2,7 +2,9 @@ import { headerConfig } from "@/config/Header";
 import Image from "next/image";
 import React from "react";
 
-import Container from "../common/container";
+import Container from "../common/Container";
+import { ThemeToggleButton } from "../common/ThemeSwitch";
+import { Button } from "../ui/button";
 
 export default function Header() {
     const { avatar, banner } = headerConfig
@@ -17,6 +19,10 @@ export default function Header() {
                         height={1000}
                         className="h-full w-full object-cover"
                     />
+
+                    <div className="absolute top-3 right-3 p-2">
+                        <ThemeToggleButton blur />
+                    </div>
                 </div>
 
                 <div className="absolute -bottom-12 left-6 sm:left-8">
