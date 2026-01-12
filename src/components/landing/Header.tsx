@@ -9,7 +9,7 @@ import { Button } from "../ui/button";
 export default function Header() {
     const { avatar, banner } = headerConfig
     return (
-        <Container className="mx-auto max-w-3xl">
+        <Container className="mx-auto max-w-3xl z-50">
             <div className="relative mb-6 opacity-100 transform-none">
                 <div className="relative overflow-hidden rounded-2xl min-h-32 sm:h-40 ">
                     <Image
@@ -26,7 +26,7 @@ export default function Header() {
                 </div>
 
                 <div className="absolute -bottom-12 left-6 sm:left-8">
-                    <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border-4 shadow-xl border-white bg-white">
+                    <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border-4 shadow-xl border-white bg-white dark:border-black">
                         <Image
                             src={avatar}
                             alt="avatar"
