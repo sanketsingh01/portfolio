@@ -6,6 +6,10 @@ import { Link } from "next-view-transitions";
 import Container from "../common/Container";
 import CV from "../svgs/CV";
 import SendIcon from "../svgs/SendIcon";
+import { GithubIcon } from "../svgs/GitHub";
+import X from "../svgs/X";
+import { LinkedinIcon } from "../svgs/Linkdedin";
+import { AtSignIcon } from "../svgs/Mail";
 import { Button } from "../ui/button";
 
 export default function Hero() {
@@ -39,6 +43,29 @@ export default function Hero() {
                     <SendIcon />
                     <Link href={`/`}>Let's talk</Link>
                 </Button>
+            </div>
+            <p className="sm sm:text-sm mb-2 sm:mb-3">Me on <strong>Internet!</strong></p>
+            <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                <a href={'https://github.com/sanketsingh01'} target="_blank">
+                    <Button variant={"outline"} className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-sx sm:text-sm transition-all duration-300 ease-in-out hover:shadow-lg">
+                        <GithubIcon />GitHub
+                    </Button>
+                </a>
+                <a href={'https://x.com/SinghSanket78'} target="_blank">
+                    <Button variant={"outline"} className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-sx sm:text-sm flex items-center transition-all duration-300 ease-in-out hover:shadow-lg">
+                        <X />Twitter
+                    </Button>
+                </a>
+                <a href={'https://www.linkedin.com/in/sanket-singh-5359732b8/'} target="_blank">
+                    <Button variant={"outline"} className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-sx sm:text-sm flex items-center transition-all duration-300 ease-in-out hover:shadow-lg">
+                        <LinkedinIcon />Linkedin
+                    </Button>
+                </a>
+                <a href={'mailto:vt118452@gmail.com'}>
+                    <Button variant={"outline"} className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-sx sm:text-sm flex items-center transition-all duration-300 ease-in-out hover:shadow-lg">
+                        <AtSignIcon />Mail
+                    </Button>
+                </a>
             </div>
         </Container>
     )
