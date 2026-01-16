@@ -7,58 +7,14 @@ import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
 import { cn } from "@/lib/utils";
 
-export interface LinkedinIconHandle {
+export interface DribbbleIconHandle {
     startAnimation: () => void;
     stopAnimation: () => void;
 }
 
-interface LinkedinIconProps extends HTMLAttributes<HTMLDivElement> {
+interface DribbbleIconProps extends HTMLAttributes<HTMLDivElement> {
     size?: number;
 }
-
-const PATH_VARIANTS: Variants = {
-    normal: {
-        opacity: 1,
-        pathLength: 1,
-        pathOffset: 0,
-        transition: {
-            duration: 0.4,
-            opacity: { duration: 0.1 },
-        },
-    },
-    animate: {
-        opacity: [0, 1],
-        pathLength: [0, 1],
-        pathOffset: [1, 0],
-        transition: {
-            duration: 0.6,
-            ease: "linear",
-            opacity: { duration: 0.1 },
-        },
-    },
-};
-
-const RECT_VARIANTS: Variants = {
-    normal: {
-        opacity: 1,
-        pathLength: 1,
-        pathOffset: 0,
-        transition: {
-            duration: 0.4,
-            opacity: { duration: 0.1 },
-        },
-    },
-    animate: {
-        opacity: [0, 1],
-        pathLength: [0, 1],
-        pathOffset: [1, 0],
-        transition: {
-            duration: 0.6,
-            ease: "linear",
-            opacity: { duration: 0.1 },
-        },
-    },
-};
 
 const CIRCLE_VARIANTS: Variants = {
     normal: {
@@ -82,11 +38,34 @@ const CIRCLE_VARIANTS: Variants = {
     },
 };
 
-const LinkedinIcon = forwardRef<LinkedinIconHandle, LinkedinIconProps>(
+const PATH_VARIANTS: Variants = {
+    normal: {
+        opacity: 1,
+        pathLength: 1,
+        pathOffset: 0,
+        transition: {
+            duration: 0.4,
+            opacity: { duration: 0.1 },
+        },
+    },
+    animate: {
+        opacity: [0, 1],
+        pathLength: [0, 1],
+        pathOffset: [1, 0],
+        transition: {
+            duration: 0.6,
+            ease: "linear",
+            opacity: { duration: 0.1 },
+        },
+    },
+};
+
+const DribbbleIcon = forwardRef<DribbbleIconHandle, DribbbleIconProps>(
     ({ onMouseEnter, onMouseLeave, className, size = 17, ...props }, ref) => {
-        const pathControls = useAnimation();
-        const rectControls = useAnimation();
         const circleControls = useAnimation();
+        const path1Controls = useAnimation();
+        const path2Controls = useAnimation();
+        const path3Controls = useAnimation();
 
         const isControlledRef = useRef(false);
 
@@ -95,14 +74,16 @@ const LinkedinIcon = forwardRef<LinkedinIconHandle, LinkedinIconProps>(
 
             return {
                 startAnimation: () => {
-                    pathControls.start("animate");
-                    rectControls.start("animate");
                     circleControls.start("animate");
+                    path1Controls.start("animate");
+                    path2Controls.start("animate");
+                    path3Controls.start("animate");
                 },
                 stopAnimation: () => {
-                    pathControls.start("normal");
-                    rectControls.start("normal");
                     circleControls.start("normal");
+                    path1Controls.start("normal");
+                    path2Controls.start("normal");
+                    path3Controls.start("normal");
                 },
             };
         });
@@ -112,12 +93,19 @@ const LinkedinIcon = forwardRef<LinkedinIconHandle, LinkedinIconProps>(
                 if (isControlledRef.current) {
                     onMouseEnter?.(e);
                 } else {
-                    pathControls.start("animate");
-                    rectControls.start("animate");
                     circleControls.start("animate");
+                    path1Controls.start("animate");
+                    path2Controls.start("animate");
+                    path3Controls.start("animate");
                 }
             },
-            [circleControls, onMouseEnter, pathControls, rectControls]
+            [
+                circleControls,
+                onMouseEnter,
+                path1Controls,
+                path2Controls,
+                path3Controls,
+            ]
         );
 
         const handleMouseLeave = useCallback(
@@ -125,12 +113,19 @@ const LinkedinIcon = forwardRef<LinkedinIconHandle, LinkedinIconProps>(
                 if (isControlledRef.current) {
                     onMouseLeave?.(e);
                 } else {
-                    pathControls.start("normal");
-                    rectControls.start("normal");
                     circleControls.start("normal");
+                    path1Controls.start("normal");
+                    path2Controls.start("normal");
+                    path3Controls.start("normal");
                 }
             },
-            [pathControls, rectControls, circleControls, onMouseLeave]
+            [
+                circleControls,
+                path1Controls,
+                path2Controls,
+                path3Controls,
+                onMouseLeave,
+            ]
         );
 
         return (
@@ -151,28 +146,31 @@ const LinkedinIcon = forwardRef<LinkedinIconHandle, LinkedinIconProps>(
                     width={size}
                     xmlns="http://www.w3.org/2000/svg"
                 >
+                    <motion.circle
+                        animate={circleControls}
+                        cx="12"
+                        cy="12"
+                        initial="normal"
+                        r="10"
+                        variants={CIRCLE_VARIANTS}
+                    />
                     <motion.path
-                        animate={pathControls}
-                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                        animate={path1Controls}
+                        d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"
                         initial="normal"
                         variants={PATH_VARIANTS}
                     />
-                    <motion.rect
-                        animate={rectControls}
-                        height="12"
+                    <motion.path
+                        animate={path2Controls}
+                        d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"
                         initial="normal"
-                        variants={RECT_VARIANTS}
-                        width="4"
-                        x="2"
-                        y="9"
+                        variants={PATH_VARIANTS}
                     />
-                    <motion.circle
-                        animate={circleControls}
-                        cx="4"
-                        cy="4"
+                    <motion.path
+                        animate={path3Controls}
+                        d="M8.56 2.75c4.37 6 6 9.42 8 17.72"
                         initial="normal"
-                        r="2"
-                        variants={CIRCLE_VARIANTS}
+                        variants={PATH_VARIANTS}
                     />
                 </svg>
             </div>
@@ -180,6 +178,6 @@ const LinkedinIcon = forwardRef<LinkedinIconHandle, LinkedinIconProps>(
     }
 );
 
-LinkedinIcon.displayName = "LinkedinIcon";
+DribbbleIcon.displayName = "DribbbleIcon";
 
-export { LinkedinIcon };
+export { DribbbleIcon };

@@ -6,14 +6,10 @@ import { Link } from "next-view-transitions";
 import Container from "../common/Container";
 import CV from "../svgs/CV";
 import SendIcon from "../svgs/SendIcon";
-import { GithubIcon } from "../svgs/GitHub";
-import X from "../svgs/X";
-import { LinkedinIcon } from "../svgs/Linkdedin";
-import { AtSignIcon } from "../svgs/Mail";
 import { Button } from "../ui/button";
 
 export default function Hero() {
-    const { badge } = HeroConfig;
+    const { badge, socialsData } = HeroConfig;
     return (
         <Container className="relative z-10 rounded-2xl border p-6 sm:p-8 md-6 pt-14 sm:pt-12 bg-white/60 border-black/8 dark:bg-white/2 dark:border-white/8 opacity-100 transform-none mx-auto max-w-3xl">
             <div className="mb-4">
@@ -44,27 +40,29 @@ export default function Hero() {
                     <Link href={`/`}>Let's talk</Link>
                 </Button>
             </div>
-            <p className="sm sm:text-sm mb-2 sm:mb-3">Me on <strong>Internet!</strong></p>
-            <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                <a href={'https://github.com/sanketsingh01'} target="_blank">
-                    <Button variant={"outline"} className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-sx sm:text-sm transition-all duration-300 ease-in-out hover:shadow-lg">
-                        <GithubIcon />GitHub
-                    </Button>
-                </a>
-                <a href={'https://x.com/SinghSanket78'} target="_blank">
-                    <Button variant={"outline"} className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-sx sm:text-sm flex items-center transition-all duration-300 ease-in-out hover:shadow-lg">
-                        <X />Twitter
-                    </Button>
-                </a>
-                <a href={'https://www.linkedin.com/in/sanket-singh-5359732b8/'} target="_blank">
-                    <Button variant={"outline"} className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-sx sm:text-sm flex items-center transition-all duration-300 ease-in-out hover:shadow-lg">
-                        <LinkedinIcon />Linkedin
-                    </Button>
-                </a>
-                <a href={'mailto:vt118452@gmail.com'}>
-                    <Button variant={"outline"} className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-sx sm:text-sm flex items-center transition-all duration-300 ease-in-out hover:shadow-lg">
-                        <AtSignIcon />Mail
-                    </Button>
+            <div className="mb-5 sm:mb-6">
+                <p className="text-xs sm:text-sm mb-2 sm:mb-3">Me on <strong>Internet!</strong></p>
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                    {socialsData.map((social) => (
+                        <a key={social.url} href={social.url} target="_blank">
+                            <Button variant={"outline"} className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-sx sm:text-sm flex items-center transition-all duration-300 ease-in-out hover:shadow-lg">
+                                {social.icon}
+                                {social.name}
+                            </Button>
+                        </a>
+                    ))}
+                </div>
+            </div>
+            <div className="mb-5 sm:mb-6">
+                <p className="text-xs sm:text-sm mb-2 sm:mb-3 text-foreground/60 ">Recently <strong>Listening</strong></p>
+                <a href="https://open.spotify.com/track/1YgDGKyKhFlimPw3mLavPG" target="_blank" className="flex items-center gap-3 p-2.5 sm:p-3 rounded-xl transition-colors bg-black/5 hover:bg-black/10 dark:bg-white/5 dark:hover:bg-white/10">
+                    <img src={'https://i.scdn.co/image/ab67616d0000b2733e3bb917af94bd82074c5d47'} alt="song" width={14} height={14} className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg shrink-0">
+                    </img>
+
+                    <div className="flex flex-col min-w-0 gap-0.5">
+                        <span className="text-sm sm:text-base font-medium text-foreground truncate">Gift</span>
+                        <span className="text-sx sm:text-xs text-foreground/60 truncate">Cheema Y, Gur Sidhu</span>
+                    </div>
                 </a>
             </div>
         </Container>
