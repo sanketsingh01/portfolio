@@ -150,10 +150,19 @@
 
 .content-background {
   background: linear-gradient(
-    -45deg,
-    rgba(230, 247, 238, 1) 0%,
-    rgba(255, 255, 255, 1) 50%,
-    rgba(230, 247, 238, 1) 100%
+    to right bottom,
+    rgba(200, 247, 220, 0.5),
+    #ffffff,
+    rgba(120, 220, 170, 0.35)
+  );
+}
+
+.content-background-dark {
+  background: linear-gradient(
+    to right bottom,
+    rgba(20, 60, 40, 0.85),
+    #0f1f17,
+    rgba(30, 90, 60, 0.75)
   );
 }
 

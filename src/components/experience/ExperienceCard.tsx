@@ -24,13 +24,13 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
         <Accordion
             type="single"
             collapsible
-            className="flex flex-col border rounded-md p-3 pt-0 pb-0 cursor-pointer"
+            className="flex flex-col border rounded-xl p-3 pt-0 pb-0 cursor-pointer bg-white/50 dark:bg-white/3 hover:border-black/16 dark:hover:border-white/16 tranition-all duration-300 ease-in-out"
             defaultValue="Alter Dimensions Innovations"
         >
             <div className="flex flex-col gap-4">
                 <AccordionItem value={experience.company}>
                     <AccordionTrigger>
-                        <div className="flex flex-col md:flex-row md:items-center md:justify-between w-full">
+                        <div className="flex flex-col md:flex-row md:items-center md:justify-between w-full cursor-pointer">
 
                             {/* Left Side */}
                             <div className="flex items-center gap-4 flex-1">
@@ -43,7 +43,7 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
                                 />
 
                                 <div className="flex flex-col overflow-hidden">
-                                    <div className="flex items-center gap-2 flex-wrap sm:gap-1 truncate">
+                                    <div className="flex items-center gap-2 flex-wrap sm:gap-1 truncate text-foreground">
                                         <h3
                                             className={cn(
                                                 'text-base lg:text-base font-bold text-foreground truncate',
@@ -86,7 +86,7 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
                                         )}
                                     </div>
 
-                                    <p>{experience.position}</p>
+                                    <p className="dark:text-foreground/60">{experience.position}</p>
                                 </div>
                             </div>
 
