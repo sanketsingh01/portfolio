@@ -24,7 +24,7 @@ export default function Hero() {
                     />
                 </div>
                 <div className="h-5 overflow-hidden">
-                    <p className="hidden sm:block text-muted-foreground text-sm">20 • Engineer • Developer • Builder</p>
+                    <p className="sm:block text-muted-foreground text-sm">20 • Engineer • Developer • Builder</p>
                 </div>
             </div>
             <p className="text-sm sm:text-base text-foreground/70 leading-relaxed mb-5 sm:mb-6">
