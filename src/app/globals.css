@@ -11,6 +11,13 @@
   src: url("/fonts/Parkinsans-VariableFont_wght.ttf") format("truetype");
 }
 
+body {
+  scrollbar-width: none;
+}
+.main {
+  scrollbar-width: none;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
