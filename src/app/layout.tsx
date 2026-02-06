@@ -20,6 +20,11 @@ export default function RootLayout({
       <html lang="en" suppressHydrationWarning>
         <body
           className={`font-parkinsans antialiased`}
+          style={{
+            backgroundImage: `radial-gradient(circle, rgba(0, 0, 0, 0.2) 1px, transparent 1px)`,
+            backgroundSize: "20px 20px",
+            backgroundPosition: "0 0",
+          }}
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
             {children}

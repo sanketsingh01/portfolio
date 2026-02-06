@@ -53,9 +53,9 @@ export default function Skill({ name, href, children }: SkillProps) {
         >
             <Link
                 ref={ref}
-                href={href}
+                href={href || "#"}
                 target="_blank"
-                className="inline-flex items-center gap-1.5 rounded-xl border-2 border-dashed border-black/20 bg-black/5 px-2 py-1.5 text-sm font-medium text-black dark:border-white/20 dark:bg-white/5 dark:text-white cursor-pointer select-none"
+                className="inline-flex items-center gap-1.5 rounded-xl border-2 border-dashed border-black/20 px-2 py-1 text-sm font-medium text-foreground dark:text-foreground/80 dark:border-white/20 dark:bg-white/5 cursor-pointer select-none"
             >
                 <div className="size-4 shrink-0">{children}</div>
                 <span>{name}</span>
