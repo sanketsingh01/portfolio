@@ -54,7 +54,7 @@ export function BlogCard({ post }: BlogCardProps) {
                             target="_blank"
                             className="group text-secondary flex items-center justify-end gap-2 underline-offset-4 hover:underline"
                         >
-                            Read More <ArrowRight className="size-4 group-hover:-rotate-45 transition-all duration-100" />
+                            Read More <ArrowRight className="size-4 group-hover:-rotate-45 transition-all duration-200" />
                         </Link>
                     </div>
                 </div>

@@ -155,6 +155,24 @@ body {
   );
 }
 
+.quote-video {
+  -webkit-mask-image:
+    linear-gradient(to right, transparent, black 20%, black 80%, transparent),
+    linear-gradient(transparent, black 10%, black 90%, transparent);
+
+  -webkit-mask-composite: destination-in;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+
+  mask-image:
+    linear-gradient(to right, transparent, black 20%, black 80%, transparent),
+    linear-gradient(transparent, black 10%, black 90%, transparent);
+
+  mask-composite: intersect;
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+}
+
 .content-background {
   background: linear-gradient(
     to right bottom,

@@ -7,6 +7,7 @@ import Projects from "@/components/landing/Projects";
 import Github from "@/components/landing/GitHub";
 import Skills from "@/components/landing/Skills";
 import Blog from "@/components/landing/Blog";
+import Quote from "@/components/landing/Quote";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Github />
       <Skills />
       <Blog />
+      <Quote />
     </Container>
   );
 }
