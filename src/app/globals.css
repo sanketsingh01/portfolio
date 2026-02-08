@@ -191,6 +191,47 @@ body {
   );
 }
 
+@keyframes logo-draw-loop {
+  0% {
+    stroke-dashoffset: 360;
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  40% {
+    stroke-dashoffset: 0;
+  }
+
+  /* Hold the fully drawn state */
+  80% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
+  /* Reset invisibly */
+  100% {
+    stroke-dashoffset: 360;
+    opacity: 0;
+  }
+}
+
+.logo-path {
+  stroke-dasharray: 360;
+  stroke-dashoffset: 360;
+  animation: logo-draw-loop 10s ease-in-out infinite;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: transparent;
+  stroke: #303030;
+}
+
+:root.dark .logo-path {
+  stroke: #fdfdfd;
+}
+
 .font-space-grotesk {
   font-family: "Space Grotesk", sans-serif;
 }

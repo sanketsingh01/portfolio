@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/common/ThemeProviders";
 import ReactLenis from "lenis/react";
 
 import Footer from "@/components/landing/Footer";
+import Navbar from "@/components/landing/Navbar";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -30,6 +31,7 @@ export default function RootLayout({
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
             <ReactLenis root>
               <div className="min-h-screen flex flex-col pb-12">
+                <Navbar />
                 {children}
                 <Footer />
               </div>
