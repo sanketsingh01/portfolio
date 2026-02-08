@@ -8,6 +8,8 @@ import Github from "@/components/landing/GitHub";
 import Skills from "@/components/landing/Skills";
 import Blog from "@/components/landing/Blog";
 import Quote from "@/components/landing/Quote";
+import Contact from "@/components/landing/Contact";
+import Footer from "@/components/landing/Footer";
 
 export default function Home() {
   return (
@@ -19,7 +21,9 @@ export default function Home() {
       <Github />
       <Skills />
       <Blog />
+      <Contact />
       <Quote />
+      <Footer />
     </Container>
   );
 }
