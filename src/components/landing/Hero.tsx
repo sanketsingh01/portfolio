@@ -33,7 +33,7 @@ export default function Hero() {
             <div className="flex flex-wrap gap-2 sm:gap-3 mb-5 sm:mb-6">
                 <Button variant={'outline'} className="px-4 sm:px-5 py-3 sm:py-2.5 text-xs sm:text-xs font-medium transition-all duration-300 ease-in-out hover:scale-105">
                     <CV />
-                    <Link href={`/`}>Resume / CV</Link>
+                    <Link href={`/resume`}>Resume / CV</Link>
                 </Button>
                 <Button variant={'default'} className="px-4 sm:px-5 py-3 sm:py-2.5 text-xs sm:text-xs font-medium main-button transition-all duration-300 ease-in-out hover:shadow-lg hover:scale-105 dark:text-white">
                     <SendIcon />
