@@ -10,19 +10,19 @@ export const HeroConfig = {
             icon: <GithubIcon />,
             url: 'https://github.com/sanketsingh01',
             name: 'GitHub',
-            previewImage: '/socials/GitHub.webp',
+            previewImage: '/Socials/GitHub.webp',
         },
         {
             icon: <TwitterIcon />,
             url: 'https://x.com/SinghSanket78',
             name: 'Twitter',
-            previewImage: '/socials/X.webp',
+            previewImage: '/Socials/X.webp',
         },
         {
             icon: <LinkedinIcon />,
             url: 'https://www.linkedin.com/in/sanket-singh-5359732b8/',
             name: 'Linkedin',
-            previewImage: '/socials/Linkedin.webp',
+            previewImage: '/Socials/Linkedin.webp',
         },
         {
             icon: <AtSignIcon />,
