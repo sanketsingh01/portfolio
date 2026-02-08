@@ -5,7 +5,7 @@ import { projects } from "@/config/Projects";
 
 export default function ProjectsPage() {
     return (
-        <Container className="py-16 bg-background">
+        <Container className="py-16 px-2 bg-background">
             <div className="space-y-8">
                 {/* Header */}
                 <div className="space-y-4 text-center">

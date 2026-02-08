@@ -5,7 +5,7 @@ import { resumeConfig } from "@/config/Resume";
 
 export default function ResumePage() {
     return (
-        <Container className="py-16 bg-background">
+        <Container className="py-16 px-2 bg-background">
             <div className="space-y-8">
                 <div className="space-y-4 text-center">
                     <h1 className="text-4xl font-bold tracking-tight lg:text-5xl">
