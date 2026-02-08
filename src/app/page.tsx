@@ -9,11 +9,10 @@ import Skills from "@/components/landing/Skills";
 import Blog from "@/components/landing/Blog";
 import Quote from "@/components/landing/Quote";
 import Contact from "@/components/landing/Contact";
-import Footer from "@/components/landing/Footer";
 
 export default function Home() {
   return (
-    <Container className="main max-h-screen overflow-y-scroll px-4 mx:px-6 py-12 pb-24">
+    <Container className="main px-4 mx:px-6 py-12">
       <Header />
       <Hero />
       <Experience />
@@ -23,7 +22,6 @@ export default function Home() {
       <Blog />
       <Contact />
       <Quote />
-      <Footer />
     </Container>
   );
 }

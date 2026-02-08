@@ -16,7 +16,7 @@ export default function Blog() {
             </div>
             <div className="mt-8 flex justify-center">
                 <Button variant="outline">
-                    <Link href="/work-experience">Show all Blogs</Link>
+                    <Link href="/blogs">Show all Blogs</Link>
                 </Button>
             </div>
         </Container>

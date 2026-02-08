@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { ViewTransitions } from "next-view-transitions"
 import { ThemeProvider } from "@/components/common/ThemeProviders";
+import ReactLenis from "lenis/react";
 
+import Footer from "@/components/landing/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -19,7 +20,7 @@ export default function RootLayout({
     <ViewTransitions>
       <html lang="en" suppressHydrationWarning>
         <body
-          className={`font-parkinsans antialiased`}
+          className="font-parkinsans antialiased min-h-screen"
           style={{
             backgroundImage: `radial-gradient(circle, rgba(0, 0, 0, 0.2) 1px, transparent 1px)`,
             backgroundSize: "20px 20px",
@@ -27,7 +28,12 @@ export default function RootLayout({
           }}
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-            {children}
+            <ReactLenis root>
+              <div className="min-h-screen flex flex-col pb-12">
+                {children}
+                <Footer />
+              </div>
+            </ReactLenis>
           </ThemeProvider>
         </body>
       </html>

@@ -3,11 +3,11 @@ import { type Projects } from "@/config/Projects";
 
 import { ProjectCard } from "./ProjectCard";
 
-interface projectgridProps {
+interface ProjectListProps {
     projects: Projects[];
 }
 
-export function projectGrid({ projects }: projectgridProps) {
+export function ProjectList({ projects }: ProjectListProps) {
     if (projects.length === 0) {
         return (
             <div className="flex flex-col gap-8">
@@ -17,7 +17,7 @@ export function projectGrid({ projects }: projectgridProps) {
     }
 
     return (
-        <div className="flex flex-grid gap-4">
+        <div className="flex flex-col gap-4">
             {projects.map((project) => (
                 <ProjectCard key={project.name} project={project} />
             ))}
