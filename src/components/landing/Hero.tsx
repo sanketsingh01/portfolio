@@ -3,7 +3,7 @@ import { HeroConfig } from "@/config/Hero";
 import Image from "next/image";
 import { Link } from "next-view-transitions";
 
-import Container from "../common/Container";
+import Container from "@/components/common/Container";
 import CV from "../svgs/CV";
 import SendIcon from "../svgs/SendIcon";
 import { Button } from "../ui/button";

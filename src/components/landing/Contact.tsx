@@ -1,10 +1,8 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
 import { HeroConfig } from "@/config/Hero";
 
-import Container from "../common/Container";
+import Container from "@/components/common/Container";
 import { Button } from "../ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 

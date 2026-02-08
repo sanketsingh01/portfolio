@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import Container from "../common/Container";
+import Container from "@/components/common/Container";
 import { GithubIcon } from "../svgs/GitHub";
 import { Button } from "../ui/button";
 

@@ -2,7 +2,7 @@ import React from "react";
 import { type Experience, experiences } from "@/config/Experience";
 import { Link } from "next-view-transitions";
 
-import Container from "../common/Container";
+import Container from "@/components/common/Container";
 import { ExperienceCard } from "../experience/ExperienceCard";
 import { Button } from "../ui/button";
 

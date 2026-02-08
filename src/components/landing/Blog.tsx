@@ -1,7 +1,7 @@
 import { type Blogs, blogs } from "@/config/Blog";
 import { Link } from "next-view-transitions";
 
-import Container from "../common/Container";
+import Container from "@/components/common/Container";
 import { BlogCard } from "../blog/BlogCard";
 import { Button } from "../ui/button";
 

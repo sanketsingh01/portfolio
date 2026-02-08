@@ -3,7 +3,7 @@
 import { skillsConfig, SkillItem } from "@/config/Skills";
 import Skill from "../common/Skill";
 
-import Container from "../common/Container";
+import Container from "@/components/common/Container";
 
 export default function Skills() {
     return (

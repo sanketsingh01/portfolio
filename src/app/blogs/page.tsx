@@ -5,7 +5,7 @@ import { Blogs, blogs } from "@/config/Blog";
 
 export default function BlogsPage() {
     return (
-        <Container className="py-16">
+        <Container className="py-16 bg-background">
             <div className="space-y-8">
                 {/* Header */}
                 <div className="space-y-4 text-center">

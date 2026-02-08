@@ -2,7 +2,7 @@ import React from "react";
 
 import { Button } from "../ui/button";
 import Link from "next/link";
-import Container from "../common/Container";
+import Container from "@/components/common/Container";
 import { type Projects, projects } from "@/config/Projects";
 import { ProjectCard } from "../Projects/ProjectCard";
 

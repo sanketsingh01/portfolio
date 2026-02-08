@@ -1,6 +1,6 @@
 import React from "react";
 
-import Container from "../common/Container";
+import Container from "@/components/common/Container";
 import { quote } from "@/config/Quote";
 
 export default function Quote() {

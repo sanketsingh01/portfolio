@@ -2,7 +2,7 @@ import { headerConfig } from "@/config/Header";
 import Image from "next/image";
 import React from "react";
 
-import Container from "../common/Container";
+import Container from "@/components/common/Container";
 
 export default function Header() {
     const { avatar, banner } = headerConfig
