@@ -1,6 +1,7 @@
-<img width="1905" height="844" alt="image" src="./public/meta/hero.webp" /># Personal Portfolio Website
-
-A minimal, high-performance personal portfolio website designed to showcase my projects, writing, and technical skills. Built with a focus on clean UI/UX, smooth animations, and accessibility.
+# Personal Portfolio Website
+<img width="1905" height="844" alt="image" src="./public/meta/hero.webp" />
+A minimal, high-performance personal portfolio website designed to showcase my projects, writing, and technical skills. Built with a focus on clean UI/UX, smooth animations, and accessibility. 
+<br></br>
 
 🔗 **Live Demo:** [tsx sanket](https://www.tsxsanket.in/)
 
