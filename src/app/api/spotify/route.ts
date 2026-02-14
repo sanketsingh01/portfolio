@@ -70,21 +70,26 @@ export async function GET() {
     Authorization: `Bearer ${token}`,
   };
 
-  // Try currently playing first
+  // Try currently playing first (204 = nothing playing, no body)
   const nowRes = await fetch(SPOTIFY_NOW_PLAYING, {
     headers,
     cache: "no-store",
   });
 
-  if (nowRes.ok) {
-    const data = await nowRes.json();
-    if (data?.item) {
-      return NextResponse.json(
-        trackFromItem(data.item, data.is_playing ?? false),
-        { status: 200 }
-      );
+  if (nowRes.status === 200) {
+    try {
+      const data = await nowRes.json();
+      if (data?.item) {
+        return NextResponse.json(
+          trackFromItem(data.item, data.is_playing ?? false),
+          { status: 200 }
+        );
+      }
+    } catch {
+      // fall through to recently played
     }
   }
+  // 204 No Content or no item → fallback to recently played
 
   // Fallback: recently played
   const recentRes = await fetch(SPOTIFY_RECENTLY_PLAYED, {
@@ -99,7 +104,16 @@ export async function GET() {
     );
   }
 
-  const recentData = await recentRes.json();
+  let recentData: { items?: { track?: Parameters<typeof trackFromItem>[0] }[] };
+  try {
+    recentData = await recentRes.json();
+  } catch {
+    return NextResponse.json(
+      { error: "Could not fetch Spotify data" },
+      { status: 502 }
+    );
+  }
+
   const first = recentData?.items?.[0]?.track;
   if (first) {
     return NextResponse.json(
