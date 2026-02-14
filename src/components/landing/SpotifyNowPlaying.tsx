@@ -11,7 +11,7 @@ type SpotifyTrack = {
   isPlaying: boolean;
 };
 
-const REFRESH_MS = 30_000; // 30 seconds
+const REFRESH_MS = 180_000; // 3 minutes
 
 export default function SpotifyNowPlaying() {
   const [track, setTrack] = useState<SpotifyTrack | null>(null);

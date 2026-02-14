@@ -1,5 +1,8 @@
 import { NextResponse } from "next/server";
 
+// Requires SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, SPOTIFY_REFRESH_TOKEN.
+// In production, set these in your host's environment (e.g. Vercel → Project → Settings → Environment Variables).
+
 const SPOTIFY_TOKEN_URL = "https://accounts.spotify.com/api/token";
 const SPOTIFY_NOW_PLAYING = "https://api.spotify.com/v1/me/player/currently-playing";
 const SPOTIFY_RECENTLY_PLAYED = "https://api.spotify.com/v1/me/player/recently-played?limit=1";
