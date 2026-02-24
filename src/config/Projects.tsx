@@ -5,6 +5,7 @@ import NodeJs from "@/components/technologies/NodeJs";
 import Prisma from "@/components/technologies/Prisma";
 import PostgreSQL from "@/components/technologies/PostgreSQL";
 import Vercel from "@/components/technologies/Vercel";
+import Motion from "@/components/technologies/Motion";
 
 export interface Technology {
     name: string;
@@ -98,4 +99,30 @@ export const projects: Projects[] = [
             },
         ]
     },
+    {
+        name: "SwingUI",
+        description: "A modern Tailwind CSS component library that helps you design sleek, responsive interfaces with ease and style to spare.",
+        image: '/projects/project3.webp',
+        isCompleted: true,
+        gitHub: 'https://github.com/imaaryan/SwingUI',
+        liveLink: 'https://swingui.com/',
+        technologies: [
+            {
+                name: "JavaScript",
+                icon: <JavaScript />,
+            },
+            {
+                name: "React",
+                icon: <ReactIcon />,
+            },
+            {
+                name: "Tailwind CSS",
+                icon: <TailwindCss />,
+            },
+            {
+                name: "Frame Motion",
+                icon: <Motion />,
+            }
+        ]
+    }
 ]
