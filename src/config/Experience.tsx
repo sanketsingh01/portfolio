@@ -30,7 +30,7 @@ export interface Experience {
 
 export const experiences: Experience[] = [
     {
-        isCurrent: true,
+        isCurrent: false,
         isBlur: false,
         company: 'Alter Dimensions Innovations',
         position: 'Frontend Developer',
@@ -43,7 +43,7 @@ export const experiences: Experience[] = [
             'Enhanced user experience and interface design through implementation of consistent design systems, accessibility standards, and performance optimizations.',
         ],
         startDate: 'December 2025',
-        endDate: 'Present',
+        endDate: 'April 2026',
         technologies: [
             {
                 name: 'Next.js',

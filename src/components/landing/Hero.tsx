@@ -25,7 +25,7 @@ export default function Hero() {
                     />
                 </div>
                 <div className="h-5 overflow-hidden">
-                    <p className="sm:block text-muted-foreground text-sm">20 • Engineer • Developer • Builder</p>
+                    <p className="sm:block text-muted-foreground text-sm">21 • Engineer • Developer • Builder</p>
                 </div>
             </div>
             <p className="text-sm sm:text-base text-foreground/70 leading-relaxed mb-5 sm:mb-6">
@@ -38,7 +38,7 @@ export default function Hero() {
                 </Button>
                 <Button variant={'default'} className="px-4 sm:px-5 py-3 sm:py-2.5 text-xs sm:text-xs font-medium main-button transition-all duration-300 ease-in-out hover:shadow-lg hover:scale-105 dark:text-white">
                     <SendIcon />
-                    <Link href={`/`}>Let's talk</Link>
+                    <Link href={`/contact-me`}>Let's talk</Link>
                 </Button>
             </div>
             <div className="mb-5 sm:mb-6">
