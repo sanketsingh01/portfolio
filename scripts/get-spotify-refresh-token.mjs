@@ -64,7 +64,7 @@ const env = loadEnv();
 const clientId = env.SPOTIFY_CLIENT_ID;
 const clientSecret = env.SPOTIFY_CLIENT_SECRET;
 const PORT = 3001;
-const redirectUri = `https://www.tsxsanket.in/callback`;
+const redirectUri = env.SPOTIFY_REDIRECT_URI || `http://localhost:${PORT}/callback`;
 const scopes = ["user-read-currently-playing", "user-read-recently-played"].join(" ");
 
 if (!clientId || !clientSecret) {
