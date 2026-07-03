@@ -19,6 +19,16 @@ export interface Blogs {
 
 export const blogs: Blogs[] = [
     {
+        slug: "https://medium.com/@vt118452/how-does-chatgpt-understands-your-questions-a-beginners-guide-to-llms-tokens-and-transformers-ca10bfed6190",
+        frontmatter: {
+            title: "How Does ChatGPT Understand Your Questions? LLMs Tokens And Transformers",
+            description: "A Beginner's Guide to LLMs, Tokens, and Transformers. How LLMs process our inputs?",
+            image: "/blogs/blog3.webp",
+            date: "2026-07-01",
+            isPublished: true
+        }
+    },
+    {
         slug: "https://data-structure-and-algorithm.hashnode.dev/how-sometimes-100-lines-of-code-is-much-better-than-small-code",
         frontmatter: {
             title: "How Large code is better than Small Code",
