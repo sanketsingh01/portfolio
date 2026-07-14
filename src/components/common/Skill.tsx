@@ -3,14 +3,17 @@
 import React, { useRef } from "react";
 import { Link } from "next-view-transitions";
 import { motion, useMotionValue, useSpring } from "motion/react";
+import { playXylophoneNote } from "@/lib/xylophone";
 
 interface SkillProps {
     name: string;
     href: string;
     children: React.ReactNode;
+    /** When set, plays a xylophone note at this Hz on hover. */
+    frequency?: number;
 }
 
-export default function Skill({ name, href, children }: SkillProps) {
+export default function Skill({ name, href, children, frequency }: SkillProps) {
     const ref = useRef<HTMLAnchorElement>(null);
 
     const x = useMotionValue(0);
@@ -27,6 +30,12 @@ export default function Skill({ name, href, children }: SkillProps) {
         damping: 15,
         mass: 0.4,
     });
+
+    const handleMouseEnter = () => {
+        if (frequency != null) {
+            playXylophoneNote(frequency);
+        }
+    };
 
     const handleMouseMove = (e: React.MouseEvent) => {
         if (!ref.current) return;
@@ -47,6 +56,7 @@ export default function Skill({ name, href, children }: SkillProps) {
     return (
         <motion.div
             style={{ x: springX, y: springY }}
+            onMouseEnter={handleMouseEnter}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             className="inline-block"

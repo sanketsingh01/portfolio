@@ -1,6 +1,7 @@
 'use client';
 
 import { cn } from "@/lib/utils";
+import { playMacClick } from "@/lib/macClick";
 import { useTheme } from "next-themes";
 import React, { useCallback, useEffect, useState } from "react";
 
@@ -50,6 +51,7 @@ export const useThemeToggle = ({
 
     const toggleTheme = useCallback(() => {
         setIsDark(!isDark);
+        playMacClick();
 
         const animation = createAnimation(variant, start, blur, gifUrl);
 
@@ -81,6 +83,7 @@ export const useThemeToggle = ({
 
     const setCrazyLightTheme = useCallback(() => {
         setIsDark(false);
+        playMacClick();
 
         const animation = createAnimation(variant, start, blur, gifUrl);
 
@@ -102,6 +105,7 @@ export const useThemeToggle = ({
 
     const setCrazyDarkTheme = useCallback(() => {
         setIsDark(true);
+        playMacClick();
 
         const animation = createAnimation(variant, start, blur, gifUrl);
 

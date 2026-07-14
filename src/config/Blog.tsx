@@ -39,6 +39,16 @@ export const blogs: Blogs[] = [
         }
     },
     {
+        slug: "https://medium.com/@vt118452/causes-of-rag-failure-understanding-the-limitations-25f9c66b36d0",
+        frontmatter: {
+            title: "Causes of RAG Failure: Understanding the limitations",
+            description: "Understand RAG causes of failure to build a better model",
+            image: "/blogs/blog4.webp",
+            date: "2026-07-14",
+            isPublished: true
+        }
+    },
+    {
         slug: "https://instroduction-to-javascript.hashnode.dev/functions-building-blocks-of-javascript",
         frontmatter: {
             title: "Functions - Building Blocks of JavaScript",
@@ -47,5 +57,5 @@ export const blogs: Blogs[] = [
             date: "2025-02-14",
             isPublished: true
         }
-    }
+    },
 ]

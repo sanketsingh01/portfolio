@@ -3,8 +3,9 @@
 import { skillsConfig, SkillItem } from "@/config/Skills";
 import Skill from "../common/Skill";
 import SkillNote from "../svgs/SkillNote";
-
+import { getXylophoneFrequency } from "@/lib/xylophone";
 import Container from "@/components/common/Container";
+
 
 export default function Skills() {
     return (
@@ -14,8 +15,13 @@ export default function Skills() {
                 <div className="absolute -top-8 right-0 hidden sm:flex items-center text-xs text-muted-foreground">
                     <SkillNote />
                 </div>
-                {skillsConfig.map((skill: SkillItem) => (
-                    <Skill key={skill.name} name={skill.name} href="#">
+                {skillsConfig.map((skill: SkillItem, index: number) => (
+                    <Skill
+                        key={skill.name}
+                        name={skill.name}
+                        href="#"
+                        frequency={getXylophoneFrequency(index)}
+                    >
                         {skill.icon}
                     </Skill>
                 ))}
