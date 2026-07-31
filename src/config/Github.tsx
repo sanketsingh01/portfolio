@@ -1,6 +1,6 @@
 export const githubConfig = {
     username: "sanketsingh01",
-    apiUrl: "https://github-contributions-api.deno.dev",
+    apiUrl: "/api/github-contributions",
 
     // Display settings 
     title: 'GitHub Activity',

@@ -23,8 +23,10 @@ type ContributionItem = {
 
 type GitHubContributionResponse = {
     date: string;
-    contributionCount: number;
-    contributionLevel:
+    count?: number;
+    level?: 0 | 1 | 2 | 3 | 4;
+    contributionCount?: number;
+    contributionLevel?:
     | 'NONE'
     | 'FIRST_QUARTILE'
     | 'SECOND_QUARTILE'
@@ -55,9 +57,13 @@ export default function Github() {
             try {
                 setIsLoading(true);
                 const response = await fetch(
-                    `${githubConfig.apiUrl}/${githubConfig.username}.json`,
+                    `${githubConfig.apiUrl}/${githubConfig.username}`,
                 );
-                const data: { contributions?: unknown[] } = await response.json();
+                if (!response.ok) {
+                    throw new Error(`GitHub contributions returned ${response.status}`);
+                }
+
+                const data: { contributions?: unknown[]; totalContributions?: number } = await response.json();
 
                 if (data?.contributions && Array.isArray(data.contributions)) {
                     // Flatten the nested array structure
@@ -79,20 +85,24 @@ export default function Github() {
                                 typeof item === 'object' &&
                                 item !== null &&
                                 'date' in item &&
-                                'contributionCount' in item &&
-                                'contributionLevel' in item,
+                                ('count' in item || 'contributionCount' in item) &&
+                                ('level' in item || 'contributionLevel' in item),
                         )
                         .map((item: GitHubContributionResponse) => ({
                             date: String(item.date),
-                            count: Number(item.contributionCount || 0),
-                            level: (contributionLevelMap[
+                            count: Number(item.count ?? item.contributionCount ?? 0),
+                            level: Number(
+                                item.level ??
+                                contributionLevelMap[
                                 item.contributionLevel as keyof typeof contributionLevelMap
-                            ] || 0) as ContributionItem['level'],
+                                ] ??
+                                0,
+                            ) as ContributionItem['level'],
                         }));
 
                     if (validContributions.length > 0) {
                         // Calculate total contributions
-                        const total = validContributions.reduce(
+                        const total = Number(data.totalContributions) || validContributions.reduce(
                             (sum, item) => sum + item.count,
                             0,
                         );
