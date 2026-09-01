@@ -3,7 +3,7 @@
 A minimal, high-performance personal portfolio website designed to showcase my projects, writing, and technical skills. Built with a focus on clean UI/UX, smooth animations, and accessibility. 
 <br></br>
 
-🔗 **Live Demo:** [tsx sanket](https://www.tsxsanket.in/)
+🔗 **Live Demo:** [Live Portfolio](https://www.tsxsanket.in/)
 
 ## ✨ Key Features
 
